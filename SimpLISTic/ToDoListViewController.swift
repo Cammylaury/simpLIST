@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoListViewController: UITableViewController {
     
-    let itemArray = ["Find Mike", "Buy Eggos", "Destroy Demogorgon"]
+    var itemArray = ["Find Mike", "Buy Eggos", "Destroy Demogorgon"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class ToDoListViewController: UITableViewController {
         return itemArray.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         
         
@@ -40,6 +40,37 @@ class ToDoListViewController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add a new list item!", message: "", preferredStyle: .alert)
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (cancelAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            
+            if textField.text != "" {
+            self.itemArray.append(textField.text!)
+                self.tableView.reloadData()
+            }
+            
+        }
+        action.isEnabled = true
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Add to your list"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
         
     }
     
