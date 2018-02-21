@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26C385BC203DE2C8008026CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385BB203DE2C8008026CE /* AppDelegate.swift */; };
-		26C385BE203DE2C8008026CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385BD203DE2C8008026CE /* ViewController.swift */; };
+		26C385BE203DE2C8008026CE /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385BD203DE2C8008026CE /* ToDoListViewController.swift */; };
 		26C385C1203DE2C8008026CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C385BF203DE2C8008026CE /* Main.storyboard */; };
 		26C385C4203DE2C8008026CE /* SimpLISTic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26C385C2203DE2C8008026CE /* SimpLISTic.xcdatamodeld */; };
 		26C385C6203DE2C8008026CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C385C5203DE2C8008026CE /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		26C385B8203DE2C8008026CE /* SimpLISTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpLISTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C385BB203DE2C8008026CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26C385BD203DE2C8008026CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26C385BD203DE2C8008026CE /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		26C385C0203DE2C8008026CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26C385C3203DE2C8008026CE /* SimpLISTic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpLISTic.xcdatamodel; sourceTree = "<group>"; };
 		26C385C5203DE2C8008026CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				26C385BB203DE2C8008026CE /* AppDelegate.swift */,
-				26C385BD203DE2C8008026CE /* ViewController.swift */,
+				26C385BD203DE2C8008026CE /* ToDoListViewController.swift */,
 				26C385BF203DE2C8008026CE /* Main.storyboard */,
 				26C385C5203DE2C8008026CE /* Assets.xcassets */,
 				26C385C7203DE2C8008026CE /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C385C4203DE2C8008026CE /* SimpLISTic.xcdatamodeld in Sources */,
-				26C385BE203DE2C8008026CE /* ViewController.swift in Sources */,
+				26C385BE203DE2C8008026CE /* ToDoListViewController.swift in Sources */,
 				26C385BC203DE2C8008026CE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
