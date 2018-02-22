@@ -13,7 +13,6 @@
 		26C385C4203DE2C8008026CE /* SimpLISTic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26C385C2203DE2C8008026CE /* SimpLISTic.xcdatamodeld */; };
 		26C385C6203DE2C8008026CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C385C5203DE2C8008026CE /* Assets.xcassets */; };
 		26C385C9203DE2C8008026CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C385C7203DE2C8008026CE /* LaunchScreen.storyboard */; };
-		26C385D1203F2F5A008026CE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385D0203F2F5A008026CE /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		26C385C5203DE2C8008026CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26C385C8203DE2C8008026CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26C385CA203DE2C8008026CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C385D0203F2F5A008026CE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 		26C385D2203F2F74008026CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				26C385D0203F2F5A008026CE /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C385D1203F2F5A008026CE /* Item.swift in Sources */,
 				26C385C4203DE2C8008026CE /* SimpLISTic.xcdatamodeld in Sources */,
 				26C385BE203DE2C8008026CE /* ToDoListViewController.swift in Sources */,
 				26C385BC203DE2C8008026CE /* AppDelegate.swift in Sources */,
