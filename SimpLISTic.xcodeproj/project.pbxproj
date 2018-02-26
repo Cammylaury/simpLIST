@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C01F65426D59C6F403DC1BD /* Pods_SimpLISTic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3F547DD49F1E30CDADE8E /* Pods_SimpLISTic.framework */; };
 		26C385BC203DE2C8008026CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385BB203DE2C8008026CE /* AppDelegate.swift */; };
 		26C385BE203DE2C8008026CE /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385BD203DE2C8008026CE /* ToDoListViewController.swift */; };
 		26C385C1203DE2C8008026CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C385BF203DE2C8008026CE /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		156E91F5932D00AC5BAED2F7 /* Pods-SimpLISTic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpLISTic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic.release.xcconfig"; sourceTree = "<group>"; };
 		26C385B8203DE2C8008026CE /* SimpLISTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpLISTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C385BB203DE2C8008026CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26C385BD203DE2C8008026CE /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		26C385C8203DE2C8008026CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26C385CA203DE2C8008026CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C385D5203F515F008026CE /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		67B3F547DD49F1E30CDADE8E /* Pods_SimpLISTic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpLISTic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C61B3D61285A500F5E1744 /* Pods-SimpLISTic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpLISTic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C01F65426D59C6F403DC1BD /* Pods_SimpLISTic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				26C385BA203DE2C8008026CE /* SimpLISTic */,
 				26C385B9203DE2C8008026CE /* Products */,
+				4B27837365EEE381C15B89E7 /* Pods */,
+				BB23C9A9CC7590B31A05B7E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +101,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		4B27837365EEE381C15B89E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69C61B3D61285A500F5E1744 /* Pods-SimpLISTic.debug.xcconfig */,
+				156E91F5932D00AC5BAED2F7 /* Pods-SimpLISTic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB23C9A9CC7590B31A05B7E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B3F547DD49F1E30CDADE8E /* Pods_SimpLISTic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26C385CD203DE2C8008026CE /* Build configuration list for PBXNativeTarget "SimpLISTic" */;
 			buildPhases = (
+				094E60C720A6C0777F2EF298 /* [CP] Check Pods Manifest.lock */,
 				26C385B4203DE2C8008026CE /* Sources */,
 				26C385B5203DE2C8008026CE /* Frameworks */,
 				26C385B6203DE2C8008026CE /* Resources */,
+				455184CC31382C3A2D73A2F9 /* [CP] Embed Pods Frameworks */,
+				C0F922E6779EE446C0B3F3D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +187,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		094E60C720A6C0777F2EF298 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpLISTic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		455184CC31382C3A2D73A2F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0F922E6779EE446C0B3F3D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26C385B4203DE2C8008026CE /* Sources */ = {
@@ -304,6 +387,7 @@
 		};
 		26C385CE203DE2C8008026CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69C61B3D61285A500F5E1744 /* Pods-SimpLISTic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +403,7 @@
 		};
 		26C385CF203DE2C8008026CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 156E91F5932D00AC5BAED2F7 /* Pods-SimpLISTic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
