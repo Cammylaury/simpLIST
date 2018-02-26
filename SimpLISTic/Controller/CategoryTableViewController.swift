@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class CategoryTableViewController: UITableViewController {
+class CategoryTableViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
@@ -19,6 +20,7 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.rowHeight = 85.0
         loadCategories()
         
     }
@@ -76,9 +78,10 @@ class CategoryTableViewController: UITableViewController {
     
     // Implement the DZN Dataview
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-       cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet!"
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet!"
         
         return cell
         
@@ -107,4 +110,18 @@ class CategoryTableViewController: UITableViewController {
     
     }
     
+    override func updateModel(at indexPath: IndexPath) {
+                
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(categoryForDeletion)
+                }
+            } catch {
+                print("Couldn't delete category: \(error)")
+            }
+        }
+    }
+    
 }
+
