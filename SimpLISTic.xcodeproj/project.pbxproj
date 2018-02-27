@@ -17,6 +17,7 @@
 		26C385DA204455BB008026CE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385D9204455BB008026CE /* Item.swift */; };
 		26C385DC204455C6008026CE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385DB204455C6008026CE /* Category.swift */; };
 		26C385DE20447336008026CE /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C385DD20447336008026CE /* SwipeTableViewController.swift */; };
+		26C385E22045C93A008026CE /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C385E12045C93A008026CE /* UIScrollView+EmptyDataSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		26C385D9204455BB008026CE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		26C385DB204455C6008026CE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		26C385DD20447336008026CE /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		26C385DF2045C938008026CE /* SimpLISTic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpLISTic-Bridging-Header.h"; sourceTree = "<group>"; };
+		26C385E02045C939008026CE /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		26C385E12045C93A008026CE /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		67B3F547DD49F1E30CDADE8E /* Pods_SimpLISTic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpLISTic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C61B3D61285A500F5E1744 /* Pods-SimpLISTic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpLISTic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,9 @@
 			children = (
 				26C385DB204455C6008026CE /* Category.swift */,
 				26C385D9204455BB008026CE /* Item.swift */,
+				26C385E02045C939008026CE /* UIScrollView+EmptyDataSet.h */,
+				26C385E12045C93A008026CE /* UIScrollView+EmptyDataSet.m */,
+				26C385DF2045C938008026CE /* SimpLISTic-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 				TargetAttributes = {
 					26C385B7203DE2C8008026CE = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -221,6 +229,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpLISTic/Pods-SimpLISTic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
@@ -228,6 +237,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -265,6 +275,7 @@
 				26C385D6203F515F008026CE /* CategoryTableViewController.swift in Sources */,
 				26C385DE20447336008026CE /* SwipeTableViewController.swift in Sources */,
 				26C385DC204455C6008026CE /* Category.swift in Sources */,
+				26C385E22045C93A008026CE /* UIScrollView+EmptyDataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,12 +413,15 @@
 			baseConfigurationReference = 69C61B3D61285A500F5E1744 /* Pods-SimpLISTic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6TXXPKMDU;
 				INFOPLIST_FILE = SimpLISTic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CamGlam.SimpLISTic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpLISTic/Model/SimpLISTic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,12 +432,14 @@
 			baseConfigurationReference = 156E91F5932D00AC5BAED2F7 /* Pods-SimpLISTic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6TXXPKMDU;
 				INFOPLIST_FILE = SimpLISTic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CamGlam.SimpLISTic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpLISTic/Model/SimpLISTic-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

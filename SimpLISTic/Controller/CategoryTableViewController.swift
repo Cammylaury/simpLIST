@@ -10,8 +10,9 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 import ChameleonFramework
+import DZNEmptyDataSet
 
-class CategoryTableViewController: SwipeTableViewController {
+class CategoryTableViewController: SwipeTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     let realm = try! Realm()
     
@@ -20,6 +21,10 @@ class CategoryTableViewController: SwipeTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
 
         tableView.rowHeight = 85.0
         loadCategories()
@@ -29,7 +34,40 @@ class CategoryTableViewController: SwipeTableViewController {
     }
     
     
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Get started making to do lists and simplifying your day!"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Go ahead and make your first category by pressing the button below or the plus button at the top."
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> NSAttributedString? {
+        let str = "Add Category"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
+
+        addButtonFunctionality()
+    }
+    
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        addButtonFunctionality()
+        
+        
+        
+    }
+    
+    func addButtonFunctionality() {
+        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add a new category!", message: "", preferredStyle: .alert)
@@ -58,7 +96,6 @@ class CategoryTableViewController: SwipeTableViewController {
         alert.addAction(action)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-        
     }
     
     func saveCategories(category: Category) {
@@ -78,6 +115,8 @@ class CategoryTableViewController: SwipeTableViewController {
         
         return categories?.count ?? 1
     }
+    
+    
     
     
     // Implement the DZN Dataview

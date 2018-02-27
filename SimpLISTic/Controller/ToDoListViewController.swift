@@ -11,8 +11,9 @@ import Foundation
 import RealmSwift
 import SwipeCellKit
 import ChameleonFramework
+import DZNEmptyDataSet
 
-class ToDoListViewController: SwipeTableViewController {
+class ToDoListViewController: SwipeTableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     var toDoItems: Results<Item>?
     let realm = try! Realm()
@@ -28,6 +29,10 @@ class ToDoListViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
+        
         tableView.rowHeight = 80.0
 
         tableView.separatorStyle = .none
@@ -36,6 +41,27 @@ class ToDoListViewController: SwipeTableViewController {
         
         loadItems()
 
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Get started making to do items!"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Go ahead and make your first item by pressing the button below or the plus button at the top."
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> NSAttributedString? {
+        let str = "Add Item"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
+        buttonFunctionality()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,21 +130,22 @@ class ToDoListViewController: SwipeTableViewController {
         tableView.reloadData()
 
         tableView.deselectRow(at: indexPath, animated: true)
+        
 
     }
-
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-
+    
+    func buttonFunctionality() {
+        
         var textField = UITextField()
-
+        
         let alert = UIAlertController(title: "Add a new list item!", message: "", preferredStyle: .alert)
-
-
+        
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (cancelAction) in
             alert.dismiss(animated: true, completion: nil)
         }
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-
+            
             if let currentCategory = self.selectedCategory {
                 do {
                     try self.realm.write {
@@ -131,19 +158,60 @@ class ToDoListViewController: SwipeTableViewController {
                     print("Error saving new items, \(error)")
                 }
             }
-
+            
             self.tableView.reloadData()
         }
         action.isEnabled = true
-
+        
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Add to your list"
             textField = alertTextField
         }
-
+        
         alert.addAction(action)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+
+        buttonFunctionality()
+//        var textField = UITextField()
+//
+//        let alert = UIAlertController(title: "Add a new list item!", message: "", preferredStyle: .alert)
+//
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (cancelAction) in
+//            alert.dismiss(animated: true, completion: nil)
+//        }
+//        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+//
+//            if let currentCategory = self.selectedCategory {
+//                do {
+//                    try self.realm.write {
+//                        let newItem = Item()
+//                        newItem.title = textField.text!
+//                        newItem.dateCreated = Date()
+//                        currentCategory.items.append(newItem)
+//                    }
+//                } catch {
+//                    print("Error saving new items, \(error)")
+//                }
+//            }
+//
+//            self.tableView.reloadData()
+//        }
+//        action.isEnabled = true
+//
+//        alert.addTextField { (alertTextField) in
+//            alertTextField.placeholder = "Add to your list"
+//            textField = alertTextField
+//        }
+//
+//        alert.addAction(action)
+//        alert.addAction(cancelAction)
+//        present(alert, animated: true, completion: nil)
 
     }
 

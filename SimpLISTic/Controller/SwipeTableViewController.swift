@@ -9,6 +9,7 @@
 import UIKit
 import SwipeCellKit
 import RealmSwift
+import DZNEmptyDataSet
 
 class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegate {
 
@@ -17,7 +18,9 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
